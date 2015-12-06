@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>Select or Die</title>
+
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,700,900' rel='stylesheet' type='text/css'>
+    <link href="css/selectordie.css" rel="stylesheet" type="text/css">
+    <link href="css/selectordie_theme_02.css" rel="stylesheet" type="text/css">
+    <link href="css/demo.css" rel="stylesheet" type="text/css">
+
+    <script src="js/jquery-1.8.0.min.js"></script>
+    <script src="js/jquery.litelighter.js"></script>
+    <script src="js/selectordie.min.js"></script>
+    <script src="js/demo.js"></script>
+
+</head>
+
+<body>
+
+	<selection id="cover" class="cover">
+		<select class="well_hello_there" data-placeholder-option="true" data-custom-class="cover_sod no_highlight">
+			<option value="null">ARTWOOD</option>
+			<option value="#config">Furniture</option>
+			<option value="#disable_enable">Contacts</option>
+			<option value="#download">Contacts</option>
+		</select>
+	</selection>	
+
+	<selection id="intro">
+		<div class="content">
+			<h1>About</h1>
+			<p>Hello, dear friends! We are the young and fresh company, that specialised at making exclusive design wood furniture, decor and jewelry. Our models are making only from rich wood breeds and have no copies. On our site, you can find our best products and order them. We believe you will enjoy and be satisfied with using our product.</p>
+		</div>
+
+	</selection>
+
+
+	<selection id="config">
+		<div class="content">
+			<header>
+				<h1>Furniture</h1>
+				<p>Types of our furniture.</p>
+			</header>
+
+			<table border="0" cellpadding="10" cellspacing="0">
+				<thead>
+					<tr>
+						<th scope="col">Product</th>
+						<th scope="col">Material</th>
+						<th scope="col">Description</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr>
+						<td class="option"><a href="#basic" title="customID">Chairs</a></td>
+						<td class="option">Wood</td>
+						<td>
+							<div class="hidden option">
+								<a href="#basic" title="customID">customID</a> - <span class="type">string</span>
+							</div>
+							Chairs from different woods.
+						</td>
+					</tr>
+
+					<tr>
+						<td class="option"><a href="#custom" title="customClass">Tables</a></td>
+						<td class="option">Wood/Metal</td>
+						<td>
+							<div class="hidden option">
+								<a href="#custom" title="customClass">customClass</a> - <span class="type">string</span>
+							</div>
+							Tables from mixed types of wood.
+						</td>
+					</tr>
+
+					<tr>
+						<td class="option"><a href="#placeholder" title="placeholder">Lamps</a></td>
+						<td class="option">Wood/Metal</td>
+						<td>
+							<div class="hidden class">
+								<a href="#placeholder" title="placeholder">placeholder</a> - <span class="type">string<span>
+							</div>
+							Lighters, lamps etc.
+						</td>
+					</tr>
+
+					<tr>
+						<td class="option"><a href="#rings" title="rings">Rings</a></td>
+						<td class="option">Wood/Metal</td>
+						<td>
+							<div class="hidden option">
+								<a href="#rings" title="rings">rings</a> - <span class="type">boolean</span>
+							</div>
+							Wood rings with including of metals.
+						</td>
+					</tr>
+
+					
+		 		</tbody>
+			</table>
+
+		</div>
+	</selection>
+
+	<selection id="basic">
+		<div class="content arrow">
+		<header>
+			<h1>Chairs</h1>
+			<p>Chair with woods.</p>
+		</header>
+		</div>
+
+	</selection>
+
+	<selection id="custom">
+		<div class="content arrow">
+			<header>
+				<h1>Tables</h1>
+				<p>Tables with woods and metal.</p>
+			</header>
+
+			
+		</div>
+
+		
+	</selection>
+
+	<selection id="placeholder">
+		<div class="content arrow">
+			<header>
+				<h1>Placeholder</h1>
+				<p><span class="option">null</span>by default</p>
+				<p>If you feel like adding a placeholder that's displayed before anything is selected. Once a selection has been made the placeholder will be removed until the user clicks the SoD again, then it will be shown until the user makes a new selection or focus is lost on the SoD. The "placeholder" is given the class <span class="option">.sod_placeholder</span></p>
+			</header>
+
+			<pre>
+				$("select").selectOrDie({
+					placeholder: "choose a number"
+				});
+			</pre>
+			<p>or</p>
+			<pre>
+				$("select").selectOrDie();
+				&lt;select data-placeholder="Choose a number"&gt;
+			</pre>
+		</div>
+	</selection>
+
+	<selection id="method">
+		<div class="content">
+			<header>
+                <h1>Methods</h1>
+                <p>These might come in handy one day. Click the different methods below to see them in action.</p>
+            </header>
+
+            <table border="0" cellpadding="10" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th scope="col">Method</th>
+                        <th scope="col">Description</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td class="option"><a href="#destroy" title="destroy">destroy</a></td>
+                        <td>
+                            <a href="#destroy" class="hidden option" title="destroy">destroy</a>
+                            Kills the SoD element and restore everything back to normal
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="option"><a href="#update" title="update">update</a></td>
+                        <td>
+                            <a href="#update" class="hidden option" title="update">update</a>
+                            Update the SoD to reflect changes made to the native <span class="option">&lt;select&gt;</span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="option"><a href="#disable_enable" title="disable">disable</a></td>
+                        <td>
+                            <a href="#disable_enable" class="hidden option" title="disable">disable</a>
+                            Disable the SoD (and the native <span class="option">&lt;select&gt;</span>), an entire option group or an option
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="option"><a href="#disable_enable" title="enable">enable</a></td>
+                        <td>
+                            <a href="#disable_enable" class="hidden option" title="enable">enable</a>
+                            Enable the SoD (and the native <span class="option">&lt;select&gt;</span>), an entire option group or an option
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </section>
+
+    <selection id="rings">
+		<div class="content arrow">
+		<header>
+			<h1>Rings</h1>
+			<p>Art rings from wood.</p>
+		</header>
+		</div>
+
+		<div class="preview">
+			<img src="#">
+			</select>
+		</div>
+	</selection>
+
+    <section id="disable_enable">
+
+        <div class="content arrow">
+            <header>
+                <h1>Contacts</h1>
+                <p>Click button to see our contacts.</p>
+            </header>
+
+            <div class="actions">
+                <span class="trigger" data-method="disable">
+                    <span>Email</span>
+                    <span class="hidden">romanyshyn.92@gmail.com</span>
+                    
+                </span>
+
+                <label for="enable_disable">
+                    <span class="trigger" data-sub-method="option" data-method="disable">
+                        <span>Phone</span>
+                        <span class="hidden">+380630238556</span>
+                    </span>
+                </label>
+
+                <label for="enable_disable">
+                    <span class="trigger" data-sub-method="group" data-method="disable">
+                        <span>Location</span>
+                        <span class="hidden">Ukraine/Lviv</span>
+                    </span>
+                </label>
+            </div>
+        </div>
+        </section>
+
+</body>
+</html>        
+ 
